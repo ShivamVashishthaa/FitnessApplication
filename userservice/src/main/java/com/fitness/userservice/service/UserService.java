@@ -57,7 +57,7 @@ public class UserService {
     public Boolean existByUserId(String userId) {
         log.info("Calling User Service For {}", userId);
         boolean b = userRepository.existsById(userId);
-        System.out.println("sdfsdfjsflksjflskdfjl    + = "+ b);
+        System.out.println("Is user valid : "+ b);
         return b;
     }
 }

@@ -14,8 +14,12 @@ spring:
 
 eureka:
   client:
+    register-with-eureka: true   # Eureka pe register kare
+    fetch-registry: true         # dusri services ko fetch kare
     serviceUrl:
       defaultZone: http://localhost:8761/eureka/
+  instance:
+    prefer-ip-address: true
 
 kafka:
   topic:

@@ -15,6 +15,7 @@ public class UserValidationService {
     public Boolean validateUser(String userId) {
         log.info("Calling User Service For {}", userId);
         try {
+            log.info("Calling User Service for {}", userId);
             return userServiceWebClient.get()
                     .uri("/api/users/{userId}/validate", userId)
                     .retrieve()
@@ -22,9 +23,9 @@ public class UserValidationService {
                     .block();
         } catch (WebClientResponseException e) {
             log.error(e.getMessage());
+            return false;
         } catch (Exception e) {
             throw new RuntimeException(e);
         }
-        return false;
     }
 }
