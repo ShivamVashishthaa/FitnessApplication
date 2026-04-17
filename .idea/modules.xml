@@ -5,7 +5,6 @@
       <module fileurl="file://$PROJECT_DIR$/.idea/FitnessApplication.iml" filepath="$PROJECT_DIR$/.idea/FitnessApplication.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/activityservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/activityservice.main.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/modules/aiservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/aiservice.main.iml" />
-      <module fileurl="file://$PROJECT_DIR$/.idea/modules/userservice.main.iml" filepath="$PROJECT_DIR$/.idea/modules/userservice.main.iml" />
     </modules>
   </component>
 </project>
