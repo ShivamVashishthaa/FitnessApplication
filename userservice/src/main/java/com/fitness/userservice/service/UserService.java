@@ -21,7 +21,16 @@ public class UserService {
     public UserResponse register(RegisterRequest registerRequest) {
 
         if (userRepository.existsByEmail(registerRequest.getEmail())) {
-            throw new RuntimeException("Email Already Exists");
+            User existingUser = userRepository.findByEmail(registerRequest.getEmail());
+            UserResponse.builder()
+                    .id(existingUser.getId())
+                    .email(existingUser.getEmail())
+                    .password(existingUser.getPassword())
+                    .firstName(existingUser.getFirstName())
+                    .lastName(existingUser.getLastName())
+                    .createdAt(existingUser.getCreatedAt())
+                    .updatedAt(existingUser.getUpdatedAt())
+                    .build();
         }
         User user = User.builder().
                 email(registerRequest.getEmail())
@@ -56,8 +65,8 @@ public class UserService {
 
     public Boolean existByUserId(String userId) {
         log.info("Calling User Service For {}", userId);
-        boolean b = userRepository.existsById(userId);
-        System.out.println("Is user valid : "+ b);
-        return b;
+        return userRepository.existsByKeycloakId(userId);
     }
+
+
 }

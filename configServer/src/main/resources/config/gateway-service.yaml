@@ -7,6 +7,8 @@ eureka:
   instance:
     prefer-ip-address: true
 
+
+
 spring:
   cloud:
     gateway:
@@ -25,3 +27,8 @@ spring:
               uri: lb://AI-SERVICE
               predicates:
                 - Path=/api/recommendations/**
+  security:
+    oauth2:
+      resourceserver:
+        jwt:
+          jwk-set-uri: http://localhost:8191/realms/fitness-app/protocol/openid-connect/certs
